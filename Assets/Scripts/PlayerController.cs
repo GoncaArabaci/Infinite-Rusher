@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float runningSpeed;
+    float xPos = 0;
+    public float xSpeed;
+    public float xLimit;
     float rightPos = 2f;
     float leftPos = -2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
             transform.position += new Vector3(rightPos, 0f, 0f);
         }
 
+        xPos = transform.position.x * xSpeed * Time.deltaTime;
+        xPos = Mathf.Clamp(xPos, -xLimit, xLimit);
 
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + runningSpeed *Time.deltaTime);
         transform.position = newPosition;
