@@ -17,18 +17,40 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        MoveLeft();
+        MoveRight();
+        MoveUp();
+        MoveDown();
+        xPos = Mathf.Clamp(xPos, -xLimit, xLimit);
+        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + runningSpeed *Time.deltaTime);
+        transform.position = newPosition;
+    }
+    void MoveLeft()
+    {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(leftPos, 0f, 0f);
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+    }
+    void MoveRight() {
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += new Vector3(rightPos, 0f, 0f);
         }
-
-        xPos = Mathf.Clamp(xPos, -xLimit, xLimit);
-
-        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + runningSpeed *Time.deltaTime);
-        transform.position = newPosition;
     }
+    void MoveUp()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position += new Vector3(0f, 2f, 0f);
+        }
+    }
+    void MoveDown()
+    {
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position += new Vector3(0f, -2f, 0f);
+        }
+    }
+
 }
