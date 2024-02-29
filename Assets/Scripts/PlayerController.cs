@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public float runningSpeed;
     float xPos = 0;
     public float xLimit;
     float rightPos = 2f;
     float leftPos = -2f;
 
+
     void Start()
     {
-        
     }
 
     void Update()
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += new Vector3(leftPos, 0f, 0f);
         }
+ 
     }
     void MoveRight() {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += new Vector3(0f, -2f, 0f);
         }
+    
     }
 
 }
