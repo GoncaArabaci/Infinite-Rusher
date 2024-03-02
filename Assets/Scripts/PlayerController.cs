@@ -10,12 +10,15 @@ public class PlayerController : MonoBehaviour
     float rightPos = 2f;
     float leftPos = -2f;
     [SerializeField] float jumpForce;
+    bool isJumping = false;
 
+    CapsuleCollider capsuleCollider;
     Rigidbody rb;
     Animator animator;
 
     void Start()
     {
+        capsuleCollider = GetComponent<CapsuleCollider>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
@@ -65,8 +68,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-
             transform.position += new Vector3(leftPos, 0f, 0f);
+            animator.Play("MoveLeft");
+
         }
     }
 
@@ -74,6 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            animator.Play("MoveRight");
 
             transform.position += new Vector3(rightPos, 0f, 0f);
         }
@@ -81,18 +86,38 @@ public class PlayerController : MonoBehaviour
 
     void MoveUp()
     {
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && !isJumping)
         {
+            isJumping = true;
             animator.Play("Jump");
             rb.AddForce(Vector3.up * jumpForce);
         }
         
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
+    }
     void MoveDown()
     {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
+            animator.Play("Slide");
+            StartCoroutine(MoveDownAndUp());
         }
+    }
+    IEnumerator MoveDownAndUp()
+    {
+        capsuleCollider.height /= 2;
+        capsuleCollider.center /= 2;
+
+        yield return new WaitForSeconds(1f);
+
+        capsuleCollider.height *= 2;
+        capsuleCollider.center *= 2;
     }
 
 }

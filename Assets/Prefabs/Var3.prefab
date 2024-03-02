@@ -900,6 +900,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3092378397474956338}
     m_Modifications:
+    - target: {fileID: 873294116209961073, guid: e3dc65604ac1ffb40a63d7cca2d79409, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4416337441271509218, guid: e3dc65604ac1ffb40a63d7cca2d79409, type: 3}
       propertyPath: m_Name
       value: Road
