@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7954346452032010270}
-  - component: {fileID: 2820527948759177802}
   - component: {fileID: -7386182390167858015}
+  - component: {fileID: 542457649978473511}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -36,8 +36,20 @@ Transform:
   - {fileID: 5928056284791475232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2820527948759177802
-MeshCollider:
+--- !u!114 &-7386182390167858015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642250251364196805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ae119245440594dad0ce428f1bb463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &542457649978473511
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54,22 +66,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &-7386182390167858015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6642250251364196805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ae119245440594dad0ce428f1bb463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Size: {x: 2.0007727, y: 1.661486, z: 0.22496986}
+  m_Center: {x: -0.00038647652, y: 0.06925696, z: 0.095438}
 --- !u!1001 &3115002618468612574
 PrefabInstance:
   m_ObjectHideFlags: 0
