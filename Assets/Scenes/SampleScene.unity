@@ -396,10 +396,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791778204}
-  - component: {fileID: 791778205}
+  - component: {fileID: 791778207}
+  - component: {fileID: 791778206}
   m_Layer: 0
   m_Name: StartGround
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,8 +421,8 @@ Transform:
   - {fileID: 1418070160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &791778205
-MeshCollider:
+--- !u!65 &791778206
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -435,13 +436,24 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 6.5, y: 2.793614, z: 1.1166077}
+  m_Center: {x: -0.078448534, y: 1.4529753, z: 38.90853}
+--- !u!114 &791778207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791778203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a2f95f9d637046a6b9f9bedc586c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863874681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2242,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 773894741917451367, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 773894741917451367, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1469125826261518047, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
@@ -2243,6 +2259,10 @@ PrefabInstance:
     - target: {fileID: 2454554195227811849, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454554195227811849, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2589130552597815407, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
@@ -2322,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757755769839659742, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6779457691044056063, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2376,6 +2396,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7827032743912370765, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8177889589357674220, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2384,13 +2408,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8186742760061127822, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8284976671718188012, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8359137586463302942, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9162456071012972418, guid: fd1281a3d6fca57419bfa059ba4ff6fe, type: 3}
       propertyPath: m_Layer
@@ -2475,7 +2503,7 @@ GameObject:
   - component: {fileID: 2018373760}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
