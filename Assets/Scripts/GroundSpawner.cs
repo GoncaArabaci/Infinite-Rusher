@@ -8,16 +8,16 @@ public class GroundSpawner : MonoBehaviour
     int distance = 78;
     bool isSpawning = false;
     int var;
+    public PlayerController playerController;
 
     void Start()
     {
-
-
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     void Update()
     {
-        if (isSpawning == false)
+        if (!isSpawning && playerController.isLive)
         {
             isSpawning = true;
             StartCoroutine(SpawnGround());

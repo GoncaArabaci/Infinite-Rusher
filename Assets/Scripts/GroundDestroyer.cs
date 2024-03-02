@@ -18,7 +18,7 @@ public class GroundDestroyer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 

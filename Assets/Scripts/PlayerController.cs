@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     float leftPos = -2f;
     [SerializeField] float jumpForce;
     bool isJumping = false;
+    public bool isLive = true;
 
     CapsuleCollider capsuleCollider;
     Rigidbody rb;
@@ -25,12 +26,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Running();
-        MoveLeft();
-        MoveRight();
-        MoveUp();
-        MoveDown();
-
+        if (isLive)
+        {
+            Running();
+            MoveLeft();
+            MoveRight();
+            MoveUp();
+            MoveDown();
+        }
     }
 
     void Running()
@@ -119,5 +122,10 @@ public class PlayerController : MonoBehaviour
         capsuleCollider.height *= 2;
         capsuleCollider.center *= 2;
     }
-
+    public void Die()
+    {
+        animator.Play("Stumble");
+        isLive = false;
+    }
+    
 }
