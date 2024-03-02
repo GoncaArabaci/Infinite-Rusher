@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float accelerationRate;
     float rightPos = 2f;
     float leftPos = -2f;
-    Rigidbody rb;
-    bool isGround = false;
     [SerializeField] float jumpForce;
+
+    Rigidbody rb;
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
+
             transform.position += new Vector3(leftPos, 0f, 0f);
         }
     }
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+
             transform.position += new Vector3(rightPos, 0f, 0f);
         }
     }
@@ -79,18 +83,11 @@ public class PlayerController : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)))
         {
+            animator.Play("Jump");
             rb.AddForce(Vector3.up * jumpForce);
-            isGround = false;
         }
+        
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = true;
-        }
-    }
-
     void MoveDown()
     {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))

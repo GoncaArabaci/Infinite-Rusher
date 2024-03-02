@@ -1943,9 +1943,17 @@ PrefabInstance:
       value: 0.10138418
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e5c40b0c100df7449ad1f2021e32687c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e5c40b0c100df7449ad1f2021e32687c, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 758b9596fff74d74c8b62fe41658a974, type: 2}
+    - target: {fileID: 5866666021909216657, guid: e5c40b0c100df7449ad1f2021e32687c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6000407479487422213, guid: e5c40b0c100df7449ad1f2021e32687c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000032727254
@@ -2460,9 +2468,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2018373755}
-  - component: {fileID: 2018373758}
   - component: {fileID: 2018373757}
+  - component: {fileID: 2018373756}
   - component: {fileID: 2018373759}
+  - component: {fileID: 2018373758}
   - component: {fileID: 2018373760}
   m_Layer: 0
   m_Name: Player
@@ -2487,7 +2496,7 @@ Transform:
   - {fileID: 1926684322}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2018373757
+--- !u!136 &2018373756
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2510,7 +2519,7 @@ CapsuleCollider:
   m_Height: 1.7698004
   m_Direction: 1
   m_Center: {x: 0, y: 0.8902525, z: 0.0991154}
---- !u!54 &2018373758
+--- !u!54 &2018373757
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2537,7 +2546,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2018373759
+--- !u!114 &2018373758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2551,7 +2560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 863874683}
   highScoreText: {fileID: 0}
---- !u!114 &2018373760
+--- !u!114 &2018373759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2564,8 +2573,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningSpeed: 6
-  accelerationRate: 0.15
-  jumpForce: 300
+  accelerationRate: 0.1
+  jumpForce: 400
+--- !u!95 &2018373760
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018373754}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e5c40b0c100df7449ad1f2021e32687c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 758b9596fff74d74c8b62fe41658a974, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
