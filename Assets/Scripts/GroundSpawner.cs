@@ -8,7 +8,7 @@ public class GroundSpawner : MonoBehaviour
     int distance = 78;
     bool isSpawning = false;
     int var;
-    public PlayerController playerController;
+    PlayerController playerController;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class GroundSpawner : MonoBehaviour
 
     void Update()
     {
-        if (!isSpawning && playerController.isLive)
+        if (!isSpawning)
         {
             isSpawning = true;
             StartCoroutine(SpawnGround());

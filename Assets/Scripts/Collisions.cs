@@ -4,24 +4,60 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour
 {
-    
+    public int maxHealth = 3;
+    public static int lives = 3;
+
+    GameManager gameManager;
+
+    public int currentHealth;
+    private Animator animator;
+    private bool canInteract = true;
+
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        PlayerController player = other.GetComponent<PlayerController>();
-
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Obstacle"))
         {
-            player.Die();
+            Damage();
         }
     }
-    
+
+    void Damage()
+    {
+        if (canInteract)
+        {
+            currentHealth--;
+            lives--;
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+            StartCoroutine(Cooldown());
+        }
+    }
+    IEnumerator Cooldown()
+    {
+        StartCoroutine(DieAnimation());
+        canInteract = false;
+        yield return new WaitForSeconds(2f);
+        canInteract = true;
+    }
+
+    void Die()
+    {
+        animator.Play("Stumble");
+        gameManager.GameOver();
+    }
+    IEnumerator DieAnimation()
+    {
+        yield return new WaitForSeconds(3); 
+    }
+
 }

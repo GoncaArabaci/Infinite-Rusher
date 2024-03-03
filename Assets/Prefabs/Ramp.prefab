@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5487630277005630425}
+  - component: {fileID: 3020314090337498630}
   m_Layer: 0
   m_Name: Ramp
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 4929053175877585853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3020314090337498630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820032653819086121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7178471, y: 1.8974389, z: 5.957007}
+  m_Center: {x: 0.86070454, y: 0.93912727, z: 3.018504}
 --- !u!1001 &3465313922989937736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,8 +210,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 1cb531e041b737645bfa848b58ad77de, type: 2}
     - target: {fileID: 65810139596200772, guid: bbc12ae2f967ec04e8c3c39eeb92733b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.098464794
+      objectReference: {fileID: 0}
+    - target: {fileID: 65810139596200772, guid: bbc12ae2f967ec04e8c3c39eeb92733b, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65810139596200772, guid: bbc12ae2f967ec04e8c3c39eeb92733b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9507685
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
