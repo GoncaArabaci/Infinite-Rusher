@@ -13,11 +13,14 @@ public class Collisions : MonoBehaviour
     private Animator animator;
     private bool canInteract = true;
 
+    
+
     void Start()
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,6 +35,7 @@ public class Collisions : MonoBehaviour
     {
         if (canInteract)
         {
+            animator.Play("Stumble");
             currentHealth--;
             lives--;
 
@@ -46,7 +50,9 @@ public class Collisions : MonoBehaviour
     {
         StartCoroutine(DieAnimation());
         canInteract = false;
+
         yield return new WaitForSeconds(2f);
+
         canInteract = true;
     }
 

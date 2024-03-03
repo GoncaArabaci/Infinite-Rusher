@@ -7,6 +7,7 @@ public class CollectCoin : MonoBehaviour
 {
     int score;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI EndScoreText;
     int increaseRate = 1;
     int highScore;
     public TextMeshProUGUI highScoreText;
@@ -14,12 +15,13 @@ public class CollectCoin : MonoBehaviour
     {
         score = 0;
         scoreText.text = score.ToString();
-        //highScore = PlayerPrefs.GetInt("highscore");
-        //highScoreText.text = highScore.ToString();
+        highScore = PlayerPrefs.GetInt("highscore");
+        highScoreText.text = highScore.ToString();
     }
     void FixedUpdate()
     {
         UpdateScore();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -38,13 +40,13 @@ public class CollectCoin : MonoBehaviour
     {
         score += increaseRate;
         scoreText.text = score.ToString();
+        EndScoreText.text = score.ToString();
+        if (score > highScore)
+        {
+            highScore = score;
+            highScoreText.text = highScore.ToString();
+            PlayerPrefs.SetInt("highscore", highScore);
 
-        //if(score > highScore)
-        //{
-        //    highScore = score;
-        //    highScoreText.text = highScore.ToString();
-        //    PlayerPrefs.SetInt("highscore", highScore);
-
-        //}
+        }
     }
 }

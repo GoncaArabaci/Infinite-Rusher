@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6779457691044056063}
   - component: {fileID: 2139752943755884624}
+  - component: {fileID: 2664296359058059181}
   m_Layer: 0
   m_Name: Var2
   m_TagString: Untagged
@@ -62,8 +63,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7, y: 4.5, z: 1.5}
-  m_Center: {x: 0, y: 41, z: -8}
+  m_Size: {x: 7, y: 10.744553, z: 1.5}
+  m_Center: {x: 0, y: 44.122276, z: -8}
+--- !u!114 &2664296359058059181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621428561389978537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a2f95f9d637046a6b9f9bedc586c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5231958826977931112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1502,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6779457691044056063}
     m_Modifications:
+    - target: {fileID: 873294116209961073, guid: e3dc65604ac1ffb40a63d7cca2d79409, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4416337441271509218, guid: e3dc65604ac1ffb40a63d7cca2d79409, type: 3}
       propertyPath: m_Name
       value: Road
