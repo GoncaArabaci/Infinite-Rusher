@@ -49,9 +49,9 @@ public class CollectCoin : MonoBehaviour
         }
         else if (score > highScore)
         {
-            CheckHighScoreColor();
             score += increaseRate;
             EndScoreText.text = score.ToString();
+            CheckHighScoreColor();
             highScore = score;
             highScoreText.text = highScore.ToString();
             PlayerPrefs.SetInt("highscore", highScore);

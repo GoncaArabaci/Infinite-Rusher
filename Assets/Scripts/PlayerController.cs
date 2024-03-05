@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(leftPos, 0f, 0f);
             animator.Play("MoveLeft");
 
+            transform.position += new Vector3(leftPos, 0f, 0f);
         }
     }
 

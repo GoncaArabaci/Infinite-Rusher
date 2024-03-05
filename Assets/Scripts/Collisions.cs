@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Collisions : MonoBehaviour
 {
@@ -13,14 +14,14 @@ public class Collisions : MonoBehaviour
     private Animator animator;
     private bool canInteract = true;
 
-    
+    public TextMeshProUGUI cooldownText;
 
     void Start()
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
-
+        cooldownText.enabled = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,6 +29,8 @@ public class Collisions : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Damage();
+            cooldownText.enabled = true;
+
         }
     }
 
@@ -50,8 +53,11 @@ public class Collisions : MonoBehaviour
     {
         StartCoroutine(DieAnimation());
         canInteract = false;
+        StartCoroutine(BlinkCooldownText());
+
 
         yield return new WaitForSeconds(2f);
+        cooldownText.enabled = false;
 
         canInteract = true;
     }
@@ -64,6 +70,15 @@ public class Collisions : MonoBehaviour
     IEnumerator DieAnimation()
     {
         yield return new WaitForSeconds(3); 
+    }
+
+    IEnumerator BlinkCooldownText()
+    {
+        while (!canInteract)
+        {
+            cooldownText.enabled = !cooldownText.enabled;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
 }
