@@ -11,17 +11,20 @@ public class CollectCoin : MonoBehaviour
     int increaseRate = 1;
     int highScore;
     public TextMeshProUGUI highScoreText;
+    public Color highScoreColor; 
+    Color defaultScoreColor;
     void Start()
     {
         score = 0;
         scoreText.text = score.ToString();
         highScore = PlayerPrefs.GetInt("highscore");
         highScoreText.text = highScore.ToString();
+        defaultScoreColor = scoreText.color; 
     }
     void FixedUpdate()
     {
         UpdateScore();
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,18 +38,34 @@ public class CollectCoin : MonoBehaviour
     {
         score += 50;
         scoreText.text = score.ToString();
+        CheckHighScoreColor();
     }
     public void UpdateScore()
     {
-        score += increaseRate;
-        scoreText.text = score.ToString();
-        EndScoreText.text = score.ToString();
-        if (score > highScore)
+        if (score <= highScore)
         {
+            score += increaseRate;
+            scoreText.text = score.ToString();
+        }
+        else if (score > highScore)
+        {
+            CheckHighScoreColor();
+            score += increaseRate;
+            EndScoreText.text = score.ToString();
             highScore = score;
             highScoreText.text = highScore.ToString();
             PlayerPrefs.SetInt("highscore", highScore);
-
+        }
+    }
+    void CheckHighScoreColor()
+    {
+        if (score > highScore)
+        {
+            scoreText.color = highScoreColor; 
+        }
+        else
+        {
+            scoreText.color = defaultScoreColor; 
         }
     }
 }

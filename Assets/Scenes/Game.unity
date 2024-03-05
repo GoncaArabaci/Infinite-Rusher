@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 150
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4177,6 +4177,7 @@ MonoBehaviour:
   scoreText: {fileID: 863874683}
   EndScoreText: {fileID: 1318899874}
   highScoreText: {fileID: 360592480}
+  highScoreColor: {r: 1, g: 0.84146494, b: 0, a: 1}
 --- !u!114 &2018373759
 MonoBehaviour:
   m_ObjectHideFlags: 0
