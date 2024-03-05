@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void MoveLeft()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))&& transform.position.x > leftPos)
         {
             animator.Play("MoveLeft");
 
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void MoveRight()
     {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && transform.position.x < rightPos)
         {
             animator.Play("MoveRight");
 
